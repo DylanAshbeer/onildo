@@ -97,6 +97,14 @@ class ExemploRoute {
 		else
 			res.render("exemplo/vazia", { layout: "layout-sem-form", titulo: "Vazia (Sem Form)", usuario: u });
 	}
+
+	public static async testes(req: app.Request, res: app.Response) {
+		let u = await Usuario.cookie(req);
+		if (!u)
+			res.redirect(app.root + "/login");
+		else
+			res.render("exemplo/vazia", { layout: "layout-sem-form", titulo: "TESTES", usuario: u });
+	}
 }
 
 export = ExemploRoute;

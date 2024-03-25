@@ -1,7 +1,7 @@
 ﻿<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion d-none d-md-flex" id="accordionSidebar">
 
 	<li class="nav-item text-center p-3">
-		<img src="<%- staticRoot %>/img/logo.png" style="max-width: 100%;">
+		<img src="<%- staticRoot %>/img/logo.png" href="<%- root %>/" style="max-width: 100%;">
 	</li>
 
 	<hr class="sidebar-divider my-0">
@@ -11,6 +11,20 @@
 		<a class="nav-link" href="<%- root %>/">
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Dashboard</span>
+		</a>
+	</li>
+
+	<li class="nav-item">
+		<a class="nav-link" href="<%- root %>/">
+			<i class="fas fa-sharp fa-solid fa-poo"></i>
+			<span>Testes</span>
+		</a>
+	</li>
+
+	<li class="nav-item">
+		<a class="nav-link" href="<%- root %>/">
+			<i class="fas fa-space-shuttle"></i>
+			<span>Spaces</span>
 		</a>
 	</li>
 
@@ -28,6 +42,21 @@
 		</div>
 	</li>
 	<% } %>
+
+	<% if (usuario.admin) { %>
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDocumentos" aria-expanded="true" aria-controls="collapseDocumentos">
+				<i class="fas fa fa-book"></i>
+				<span>Documentos</span>
+			</a>
+			<div id="collapseDocumentos" class="collapse" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<a class="collapse-item" href="<%- root %>/usuario/criar">Criar</a>
+					<a class="collapse-item" href="<%- root %>/usuario/listar">Gerenciar</a>
+				</div>
+			</div>
+		</li>
+		<% } %>
 
 	<hr class="sidebar-divider">
 
@@ -88,6 +117,7 @@
 				<a class="collapse-item" href="<%- root %>/exemplo/nao-sera-encontrada">Não encontrada</a>
 				<a class="collapse-item" href="<%- root %>/exemplo/vazia">Vazia</a>
 				<a class="collapse-item" href="<%- root %>/exemplo/vaziasemform">Vazia (Sem Form)</a>
+				<a class="collapse-item" href="<%- root %>/exemplo/testes">Testes</a>
 			</div>
 		</div>
 	</li>

@@ -9,7 +9,7 @@ class UsuarioRoute {
 			res.redirect(app.root + "/acesso");
 		else
 			res.render("usuario/editar", {
-				titulo: "Criar Usuário",
+				titulo: "Criar Usuário 2024",
 				textoSubmit: "Criar",
 				usuario: u,
 				item: null,
